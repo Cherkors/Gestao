@@ -95,5 +95,39 @@ namespace DAL
         {
 
         }
+          {
+       List<Usuario> usuarios = new List<Usuario>();
+        Usuario usuario;
+
+        SqlConnection cn = new SqlConnection();
+        SqlConnection cmd = new SqlConnection();
+
+        try
+        {
+        cn.ConnectionString = Conexao.StringDeConexao;
+        cmd.Connection = cn;
+        cmd.CommandText = @"SELECT TOP 1 1 AS Resultado FROM UsuarioGrupoUsuario    
+                           INNER JOIN PermissaoGrupoUsuario
+                             ON UsuarioGrupoUsuario.Id_GrupoUsuario = PermissaoGrupoUsuario.Id_GrupoUsuario
+                          WHERE UsuarioGrupoUsuario.Id_Usuario = @IdUsuario
+                             AND PermissaoGrupoUsuario.id_Permissao = @IdPermissao";
+
+
+            cmd.CommandThype = System.Data.CommandType.Text;
+
+            cmd.Parameters.AddWhithValue("@IdUsuario" _idUsuario);
+            cmd.Parameters.AddWhitvalue("@idpermissao"_idUsuario);
+
+
+             cn.Open();
+
+            using(SqlDataReader rd = cmd.ExecuteReader())
+            {
+             if(rd.Read())
+                return true;
+            }
+     
+          
+
     }
 }
