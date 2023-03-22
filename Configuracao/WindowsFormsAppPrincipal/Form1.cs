@@ -16,10 +16,5 @@ namespace WindowsFormsAppPrincipal
         {
             InitializeComponent();
         }
-
-        private void permissõesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

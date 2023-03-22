@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88ACE32B-B5D5-43E7-A846-4643F31341BF}</ProjectGuid>
+    <ProjectGuid>{B4E7E640-5E7C-4EF5-9750-93A7CB95B3E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
@@ -42,12 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="GrupoUsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{de935791-61d2-4409-81e1-b2142fb3de4b}</Project>
+      <Project>{db200a1b-ff8c-46b0-9fe8-77288fa71c92}</Project>
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
